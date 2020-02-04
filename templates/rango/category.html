@@ -8,10 +8,7 @@
 	
 	<body>
 	
-		<div>
-		<a href="/rango/">Home</a><br />
-		</div>
-		
+		<div><a href="/rango/">Home</a><br /></div>
 		<div>
 		{% if category %}
 			<h1>{{ category.name }}</h1>
@@ -20,9 +17,11 @@
 				{% for page in pages %}
 				<li><a href="{{ page.url }}">{{ page.title }}</a></li>
 				{% endfor %}
+				<div><a href="/rango/category/{{ category.slug }}/add_page/">Add Page</a> <br /></div>
 			</ul>
 			{% else %}
 			<strong>No pages currently in category.</strong>
+			<div><a href="/rango/category/{{ category.slug }}/add_page/">Add Page</a> <br /></div>
 			{% endif %}
 		{% else %}
 			The specified category does not exist.
